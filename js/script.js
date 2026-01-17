@@ -43,3 +43,19 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 });
+
+// Handle contact form submission
+function handleContactForm(event){
+  event.preventDefault();
+  const resultEl = document.getElementById('form-result');
+  const formData = new FormData(event.target);
+  const name = formData.get('name');
+  
+  // Simple client-side validation and feedback
+  if(name.trim()){
+    resultEl.innerHTML = `<strong style="color:green;">✓ Thank you, ${name}! Your message has been received. We'll get back to you soon.</strong>`;
+    event.target.reset();
+    setTimeout(() => resultEl.innerHTML = '', 5000);
+  }
+  return false;
+}

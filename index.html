@@ -9,19 +9,18 @@
 	<body>
 		<header class="site-header">
 			<div class="container header-inner">
-				<a class="brand" href="#">Digital Financial Academy</a>
-				<button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-				<nav class="site-nav" id="site-nav">
-					<ul>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#banking">Banking</a></li>
-						<li><a href="#investment">Investment</a></li>
-						<li><a href="#insurance">Insurance</a></li>
-						<li><a href="#pension">Pension</a></li>
-						<li><a href="#calculator">Calculator</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</nav>
+        <a class="brand" href="index.html">Digital Financial Academy</a>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="site-nav" id="site-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="banking.html">Banking</a></li>
+            <li><a href="investment.html">Investment</a></li>
+            <li><a href="insurance.html">Insurance</a></li>
+            <li><a href="pension.html">Pension</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="contact.html">Contact</a></li>
 			</div>
 		</header>
 
@@ -30,59 +29,42 @@
 				<div class="container">
 					<h1>Welcome to the Digital Financial Academy</h1>
 					<p>Learn banking, investing, insurance, pensions and use practical calculators to plan your financial future.</p>
-					<a class="btn" href="#about">Get Started</a>
+					<a class="btn" href="about.html">Get Started</a>
 				</div>
 			</section>
 
-			<section id="about" class="section container">
-				<h2>About Us</h2>
-				<p>Digital Financial Academy provides clear, practical financial education for individuals and small businesses. Our mission is to empower people to make better financial decisions.</p>
-			</section>
-
-			<section id="banking" class="section container">
-				<h2>Banking</h2>
-				<p>Explore types of bank accounts, how to choose the right provider, interest basics, and digital banking tools.</p>
-			</section>
-
-			<section id="investment" class="section container">
-				<h2>Investment</h2>
-				<p>Learn about stocks, bonds, ETFs, diversification, risk management and long-term strategies.</p>
-			</section>
-
-			<section id="insurance" class="section container">
-				<h2>Insurance</h2>
-				<p>Understand life, health, property and liability insurance so you can select the right protection for your needs.</p>
-			</section>
-
-			<section id="pension" class="section container">
-				<h2>Pension</h2>
-				<p>Plan for retirement: pension types, contribution strategies, and tax considerations.</p>
-			</section>
-
-			<section id="calculator" class="section container">
-				<h2>Calculator</h2>
-				<p>Use the following simple compound interest calculator to estimate future value.</p>
-				<form id="calc-form" class="calc-form" onsubmit="return false;">
-					<label>Principal (initial) amount
-						<input type="number" id="principal" value="1000" min="0" step="any">
-					</label>
-					<label>Monthly contribution
-						<input type="number" id="contribution" value="100" min="0" step="any">
-					</label>
-					<label>Annual interest rate (%)
-						<input type="number" id="rate" value="5" min="0" step="any">
-					</label>
-					<label>Years
-						<input type="number" id="years" value="10" min="0" step="1">
-					</label>
-					<button id="calc-btn" class="btn">Calculate</button>
-				</form>
-				<div id="calc-result" class="calc-result" aria-live="polite"></div>
-			</section>
-
-			<section id="contact" class="section container">
-				<h2>Contact</h2>
-				<p>Questions? Email us at <a href="mailto:info@digitalfinancial.academy">info@digitalfinancial.academy</a> or follow us on social media.</p>
+			<section class="section container">
+				<h2>Our Topics</h2>
+				<div class="card-grid">
+					<div class="card">
+						<h3><a href="about.html">About Us</a></h3>
+						<p>Learn more about our mission and what we offer</p>
+					</div>
+					<div class="card">
+						<h3><a href="banking.html">Banking</a></h3>
+						<p>Explore account types and digital banking tools</p>
+					</div>
+					<div class="card">
+						<h3><a href="investment.html">Investment</a></h3>
+						<p>Master stocks, bonds, ETFs and diversification</p>
+					</div>
+					<div class="card">
+						<h3><a href="insurance.html">Insurance</a></h3>
+						<p>Understand protection options for your needs</p>
+					</div>
+					<div class="card">
+						<h3><a href="pension.html">Pension</a></h3>
+						<p>Plan for a secure retirement</p>
+					</div>
+					<div class="card">
+						<h3><a href="calculator.html">Calculator</a></h3>
+						<p>Calculate your financial future</p>
+					</div>
+					<div class="card">
+						<h3><a href="contact.html">Contact</a></h3>
+						<p>Get in touch with our team</p>
+					</div>
+				</div>
 			</section>
 		</main>
 
