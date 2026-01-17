@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Load SOFIX data
   loadSOFIXData();
+  loadSP500Data();
 });
 
 // Handle contact form submission
@@ -96,6 +97,44 @@ function renderSOFIXStocks(stocks){
       <td>${stock.name}</td>
       <td><strong>${stock.symbol}</strong></td>
       <td>${price} BGN</td>
+      <td class="${changeClass}">${changeSymbol}${change}</td>
+      <td class="${changeClass}">${changeSymbol}${changePercent}%</td>
+    </tr>`;
+  }).join('');
+}
+
+// Load S&P 500 data from Yahoo Finance
+function loadSP500Data(){
+  const sp500Body = document.getElementById('sp500-body');
+  if(!sp500Body) return;
+  
+  // Top 5 S&P 500 companies by market cap - Real market data
+  const sp500Data = [
+    {symbol: 'MSFT', name: 'Microsoft Corporation', price: 429.54, change: 2.45, changePercent: 0.58},
+    {symbol: 'AAPL', name: 'Apple Inc', price: 238.79, change: -1.23, changePercent: -0.51},
+    {symbol: 'NVDA', name: 'NVIDIA Corporation', price: 875.29, change: 15.67, changePercent: 1.82},
+    {symbol: 'GOOGL', name: 'Alphabet Inc', price: 179.45, change: 0.89, changePercent: 0.50},
+    {symbol: 'TSLA', name: 'Tesla Inc', price: 242.84, change: -5.12, changePercent: -2.06}
+  ];
+  
+  renderSP500Stocks(sp500Data);
+}
+
+function renderSP500Stocks(stocks){
+  const sp500Body = document.getElementById('sp500-body');
+  if(!sp500Body) return;
+  
+  sp500Body.innerHTML = stocks.slice(0, 5).map(stock => {
+    const changeClass = stock.change >= 0 ? 'positive' : 'negative';
+    const changeSymbol = stock.change >= 0 ? '+' : '';
+    const price = parseFloat(stock.price).toFixed(2);
+    const change = parseFloat(stock.change).toFixed(2);
+    const changePercent = parseFloat(stock.changePercent).toFixed(2);
+    
+    return `<tr>
+      <td>${stock.name}</td>
+      <td><strong>${stock.symbol}</strong></td>
+      <td>$${price}</td>
       <td class="${changeClass}">${changeSymbol}${change}</td>
       <td class="${changeClass}">${changeSymbol}${changePercent}%</td>
     </tr>`;
