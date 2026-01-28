@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="contact.title">Contact - Digital Financial Academy</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+    <link rel="stylesheet" href="css/style.css">    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>  </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
@@ -31,12 +30,16 @@
 
     <div class="layout">
       <aside class="sidebar">
-        <nav class="sidebar-nav">
+        <div class="sidebar-toggle">
+          <span data-i18n="nav.menu">Menu</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <nav class="sidebar-nav accordion-menu">
           <ul>
-            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
-            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
-            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            <li><a href="index.html">🏠 <span data-i18n="nav.home">Home</span></a></li>
+            <li><a href="about.html">ℹ️ <span data-i18n="nav.about">About Us</span></a></li>
+            <li><a href="calculator.html">🧮 <span data-i18n="nav.calculator">Calculator</span></a></li>
+            <li><a href="contact.html">📧 <span data-i18n="nav.contact">Contact</span></a></li>
           </ul>
         </nav>
       </aside>

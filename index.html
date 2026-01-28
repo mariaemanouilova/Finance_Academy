@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title data-i18n="brand">Digital Financial Academy</title>
 		<link rel="stylesheet" href="css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 	</head>
 	<body>
 		<header class="site-header">
@@ -14,6 +15,7 @@
           <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
         </div>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <button id="drawer-toggle" class="drawer-toggle" aria-label="Toggle drawer menu" title="Quick menu">📋</button>
         <nav class="site-nav" id="site-nav">
           <ul>
             <li><a href="banking.html" data-i18n="nav.banking">Banking</a></li>
@@ -29,95 +31,101 @@
       </div>
     </header>
 
-		<div class="layout">
-		  <aside class="sidebar">
-		    <nav class="sidebar-nav">
-		      <ul>
-		        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-		        <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
-		        <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
-		        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-		      </ul>
-		    </nav>
-		  </aside>
-		  <main class="main-content">
-			<section id="hero" class="hero">
-				<div class="container">
-					<h1 data-i18n="index.hero.title">Welcome to the Digital Financial Academy</h1>
-					<p data-i18n="index.hero.subtitle">Learn banking, investing, insurance, pensions and use practical calculators to plan your financial future.</p>
-					<a class="btn" href="about.html" data-i18n="index.hero.cta">Get Started</a>
+    <!-- Navigation Drawer Menu -->
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <aside id="nav-drawer" class="nav-drawer">
+      <div class="drawer-header">
+        <h3 style="margin: 0; color: #2b6cb0;">📚 Quick Access</h3>
+        <button id="drawer-close" class="drawer-close" aria-label="Close drawer">✕</button>
+      </div>
+      <nav class="drawer-nav">
+        <ul>
+          <li><a href="index.html" class="drawer-link">🏠 <span data-i18n="nav.home">Home</span></a></li>
+          <li><a href="about.html" class="drawer-link">ℹ️ <span data-i18n="nav.about">About Us</span></a></li>
+          <li><a href="calculator.html" class="drawer-link">🧮 <span data-i18n="nav.calculator">Calculator</span></a></li>
+          <li><a href="contact.html" class="drawer-link">📧 <span data-i18n="nav.contact">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="drawer-footer" style="border-top: 1px solid #e2e8f0; padding-top: 1rem; margin-top: 1.5rem;">
+        <p style="margin: 0 0 0.5rem 0; font-size: 0.85rem; color: #64748b;">Useful Links</p>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li><a href="banking.html" class="drawer-link" style="color: #7c3aed;">💳 <span data-i18n="nav.banking">Banking</span></a></li>
+          <li><a href="investment.html" class="drawer-link" style="color: #7c3aed;">📈 <span data-i18n="nav.investment">Investment</span></a></li>
+          <li><a href="insurance.html" class="drawer-link" style="color: #7c3aed;">🛡️ <span data-i18n="nav.insurance">Insurance</span></a></li>
+          <li><a href="pension.html" class="drawer-link" style="color: #7c3aed;">🎯 <span data-i18n="nav.pension">Pension</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+		<main>
+			<section id="hero" class="hero" style="background: linear-gradient(135deg, #2b6cb0 0%, #1e4f7d 100%); color: white; padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden;">
+				<div class="container" style="max-width: 900px; animation: fadeInUp 0.8s ease;">
+					<h1 data-i18n="index.hero.title" style="font-size: 3rem; margin-bottom: 1rem; animation: fadeInUp 0.8s ease 0.1s backwards;">Welcome to the Digital Financial Academy</h1>
+					<p data-i18n="index.hero.subtitle" style="font-size: 1.2rem; opacity: 0.95; margin-bottom: 2rem; animation: fadeInUp 0.8s ease 0.2s backwards;">Learn banking, investing, insurance, pensions and use practical calculators to plan your financial future.</p>
+					<a class="btn" href="about.html" data-i18n="index.hero.cta" style="display: inline-block; background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%); color: #2b6cb0; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; animation: scaleIn 0.6s ease 0.3s backwards;">Get Started →</a>
+				</div>
+				<div style="position: absolute; bottom: 0; right: 0; width: 400px; height: 400px; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"%23ffffff\" opacity=\"0.05\"/><path d=\"M 20 50 Q 35 30 50 50 T 80 50\" stroke=\"%23ffffff\" stroke-width=\"1\" fill=\"none\" opacity=\"0.1\"/><path d=\"M 20 60 Q 35 40 50 60 T 80 60\" stroke=\"%23ffffff\" stroke-width=\"1\" fill=\"none\" opacity=\"0.08\"/></svg>'); background-size: cover; opacity: 0.3; animation: float 6s ease-in-out infinite;"></div>
+			</section>
+
+			<section class="section container">
+				<h2 data-i18n="index.topics" style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">Our Topics</h2>
+				<div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+					<div class="card-interactive" style="animation: fadeInUp 0.6s ease;">
+						<div style="font-size: 3rem; margin-bottom: 1rem;">💳</div>
+						<h3><a href="banking.html" data-i18n="nav.banking" style="color: inherit; text-decoration: none;">Banking</a></h3>
+						<p data-i18n="banking.intro" style="margin: 0; color: #64748b; font-size: 0.95rem;">Explore types of bank accounts, how to choose the right provider, interest basics, and digital banking tools.</p>
+					</div>
+					<div class="card-interactive" style="animation: fadeInUp 0.6s ease 0.1s backwards;">
+						<div style="font-size: 3rem; margin-bottom: 1rem;">📈</div>
+						<h3><a href="investment.html" data-i18n="nav.investment" style="color: inherit; text-decoration: none;">Investment</a></h3>
+						<p data-i18n="investment.intro" style="margin: 0; color: #64748b; font-size: 0.95rem;">Learn about stocks, bonds, ETFs, diversification, risk management and long-term strategies.</p>
+					</div>
+					<div class="card-interactive" style="animation: fadeInUp 0.6s ease 0.2s backwards;">
+						<div style="font-size: 3rem; margin-bottom: 1rem;">🛡️</div>
+						<h3><a href="insurance.html" data-i18n="nav.insurance" style="color: inherit; text-decoration: none;">Insurance</a></h3>
+						<p data-i18n="insurance.intro" style="margin: 0; color: #64748b; font-size: 0.95rem;">Understand life, health, property and liability insurance so you can select the right protection.</p>
+					</div>
+					<div class="card-interactive" style="animation: fadeInUp 0.6s ease 0.3s backwards;">
+						<div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+						<h3><a href="pension.html" data-i18n="nav.pension" style="color: inherit; text-decoration: none;">Pension</a></h3>
+						<p data-i18n="pension.intro" style="margin: 0; color: #64748b; font-size: 0.95rem;">Plan for retirement: pension types, contribution strategies, and tax considerations.</p>
+					</div>
 				</div>
 			</section>
 
 			<section class="section container">
-				<h2 data-i18n="index.topics">Our Topics</h2>
-				<div class="card-grid">
-					<div class="card">
-						<div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop')"></div>
-						<div class="card-content">
-							<h3><a href="about.html" data-i18n="index.about.title">About Us</a></h3>
-							<p data-i18n="index.about.desc">Learn more about our mission and what we offer</p>
-						</div>
+				<h2 data-i18n="index.tools" style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">Our Tools</h2>
+				<div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+					<div class="card-interactive" style="animation: fadeInUp 0.6s ease;">
+						<div style="font-size: 3rem; margin-bottom: 1rem;">🧮</div>
+						<h3><a href="calculator.html" data-i18n="nav.calculator" style="color: inherit; text-decoration: none;">Calculator</a></h3>
+						<p style="margin: 0; color: #64748b; font-size: 0.95rem;">Calculate compound interest, savings goals, and financial projections.</p>
 					</div>
-					<div class="card">
-						<div class="card-image" style="background-image: url('img/banking.jpg')"></div>
-						<div class="card-content">
-							<h3><a href="banking.html" data-i18n="index.banking.title">Banking</a></h3>
-							<p data-i18n="index.banking.desc">Explore account types and digital banking tools</p>
-						</div>
+					<div class="card-interactive" style="animation: fadeInUp 0.6s ease 0.1s backwards;">
+						<div style="font-size: 3rem; margin-bottom: 1rem;">ℹ️</div>
+						<h3><a href="about.html" data-i18n="nav.about" style="color: inherit; text-decoration: none;">About Us</a></h3>
+						<p style="margin: 0; color: #64748b; font-size: 0.95rem;">Learn more about our mission, values, and educational approach.</p>
 					</div>
-					<div class="card">
-						<div class="card-image" style="background-image: url('img/investment.webp')"></div>
-						<div class="card-content">
-							<h3><a href="investment.html" data-i18n="index.investment.title">Investment</a></h3>
-							<p data-i18n="index.investment.desc">Master stocks, bonds, ETFs and diversification</p>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop')"></div>
-						<div class="card-content">
-							<h3><a href="insurance.html" data-i18n="index.insurance.title">Insurance</a></h3>
-							<p data-i18n="index.insurance.desc">Understand protection options for your needs</p>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-image" style="background-image: url('img/pension.jpg')"></div>
-						<div class="card-content">
-							<h3><a href="pension.html" data-i18n="index.pension.title">Pension</a></h3>
-							<p data-i18n="index.pension.desc">Plan for a secure retirement</p>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop')"></div>
-						<div class="card-content">
-							<h3><a href="calculator.html" data-i18n="index.calculator.title">Calculator</a></h3>
-							<p data-i18n="index.calculator.desc">Calculate your financial future</p>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop')"></div>
-						<div class="card-content">
-							<h3><a href="contact.html" data-i18n="index.contact.title">Contact</a></h3>
-							<p data-i18n="index.contact.desc">Get in touch with our team</p>
-						</div>
+					<div class="card-interactive" style="animation: fadeInUp 0.6s ease 0.2s backwards;">
+						<div style="font-size: 3rem; margin-bottom: 1rem;">📧</div>
+						<h3><a href="contact.html" data-i18n="nav.contact" style="color: inherit; text-decoration: none;">Contact</a></h3>
+						<p style="margin: 0; color: #64748b; font-size: 0.95rem;">Get in touch with us for questions, feedback, or collaboration opportunities.</p>
 					</div>
 				</div>
 			</section>
-		  </main>
-		</div>
+
+		</main>
 
 		<footer class="site-footer">
 			<div class="container footer-inner">
 				<p data-i18n="footer.copyright" data-copyright-year>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
 				<p class="footer-links">
-					<a href="#about" data-i18n="footer.about">About</a> · <a href="#contact" data-i18n="footer.contact">Contact</a> · <a href="#privacy" data-i18n="footer.privacy">Privacy</a>
+					<a href="about.html" data-i18n="footer.about">About</a> · <a href="contact.html" data-i18n="footer.contact">Contact</a> · <a href="#" data-i18n="footer.privacy">Privacy</a>
 				</p>
 			</div>
 		</footer>
 
 		<script src="js/translations.js"></script>
 		<script src="js/script.js"></script>
-	</body>
-</html>		<script src="js/script.js"></script>
 	</body>
 </html>

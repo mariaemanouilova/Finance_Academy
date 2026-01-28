@@ -12,7 +12,7 @@ function translatePage(lang) {
     const key = el.getAttribute('data-i18n');
     const text = t(key, lang);
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'BUTTON') {
-      if (el.type === 'submit' || el.classList.contains('btn')) {
+      if (el.type === 'submit' || el.classList.contains('btn') || el.classList.contains('lang-btn')) {
         el.textContent = text;
       } else {
         el.placeholder = text;
@@ -66,6 +66,15 @@ document.addEventListener('DOMContentLoaded', function(){
   // Initialize language system
   initLanguage();
 
+  // Initialize animations and interactions
+  initLottieAnimations();
+  initScrollAnimations();
+  initButtonInteractions();
+  initFormEnhancements();
+  initPageTransitions();
+  initTooltips();
+  initDrawerMenu();
+
   // Nav toggle for small screens
   const navToggle = document.getElementById('nav-toggle');
   const siteNav = document.getElementById('site-nav');
@@ -75,6 +84,16 @@ document.addEventListener('DOMContentLoaded', function(){
     });
     // close nav when a link is clicked
     siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> siteNav.classList.remove('open')));
+  }
+
+  // Accordion sidebar menu
+  const sidebarToggle = document.querySelector('.sidebar-toggle');
+  const sidebarNav = document.querySelector('.accordion-menu');
+  if(sidebarToggle && sidebarNav){
+    sidebarToggle.addEventListener('click', function(){
+      sidebarNav.classList.toggle('collapsed');
+      sidebarToggle.classList.toggle('collapsed');
+    });
   }
 
   // Language switcher
@@ -187,32 +206,178 @@ function loadSP500Data(){
   // Top 5 S&P 500 companies by market cap - Real market data
   const sp500Data = [
     {symbol: 'MSFT', name: 'Microsoft Corporation', price: 429.54, change: 2.45, changePercent: 0.58},
-    {symbol: 'AAPL', name: 'Apple Inc', price: 238.79, change: -1.23, changePercent: -0.51},
-    {symbol: 'NVDA', name: 'NVIDIA Corporation', price: 875.29, change: 15.67, changePercent: 1.82},
-    {symbol: 'GOOGL', name: 'Alphabet Inc', price: 179.45, change: 0.89, changePercent: 0.50},
-    {symbol: 'TSLA', name: 'Tesla Inc', price: 242.84, change: -5.12, changePercent: -2.06}
-  ];
+// Initialize Lottie animations
+function initLottieAnimations() {
+  // Banking hero animation (using a simple spinning animation)
+  const bankingHero = document.getElementById('lottie-banking-hero');
+  if (bankingHero) {
+    bankingHero.style.fontSize = '3rem';
+    bankingHero.innerHTML = '💰';
+    bankingHero.style.display = 'flex';
+    bankingHero.style.alignItems = 'center';
+    bankingHero.style.justifyContent = 'center';
+    bankingHero.style.animation = 'bounce 1s ease-in-out infinite';
+  }
   
-  renderSP500Stocks(sp500Data);
+  // Investment hero animation
+  const investmentHero = document.getElementById('lottie-investment-hero');
+  if (investmentHero) {
+    investmentHero.style.fontSize = '3rem';
+    investmentHero.innerHTML = '📊';
+    investmentHero.style.display = 'flex';
+    investmentHero.style.alignItems = 'center';
+    investmentHero.style.justifyContent = 'center';
+    investmentHero.style.animation = 'pulse 2s ease-in-out infinite';
+  }
+  
+  // Insurance hero animation
+  const insuranceHero = document.getElementById('lottie-insurance-hero');
+  if (insuranceHero) {
+    insuranceHero.style.fontSize = '3rem';
+    insuranceHero.innerHTML = '✅';
+    insuranceHero.style.display = 'flex';
+    insuranceHero.style.alignItems = 'center';
+    insuranceHero.style.justifyContent = 'center';
+    insuranceHero.style.animation = 'scaleIn 0.8s ease-out';
+  }
+  
+  // Pension hero animation
+  const pensionHero = document.getElementById('lottie-pension-hero');
+  if (pensionHero) {
+    pensionHero.style.fontSize = '3rem';
+    pensionHero.innerHTML = '🎁';
+    pensionHero.style.display = 'flex';
+    pensionHero.style.alignItems = 'center';
+    pensionHero.style.justifyContent = 'center';
+    pensionHero.style.animation = 'float 3s ease-in-out infinite';
+  }
 }
 
-function renderSP500Stocks(stocks){
-  const sp500Body = document.getElementById('sp500-body');
-  if(!sp500Body) return;
+// Add scroll animation effects
+function initScrollAnimations() {
+  const cards = document.querySelectorAll('.card-interactive');
   
-  sp500Body.innerHTML = stocks.slice(0, 5).map(stock => {
-    const changeClass = stock.change >= 0 ? 'positive' : 'negative';
-    const changeSymbol = stock.change >= 0 ? '+' : '';
-    const price = parseFloat(stock.price).toFixed(2);
-    const change = parseFloat(stock.change).toFixed(2);
-    const changePercent = parseFloat(stock.changePercent).toFixed(2);
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+      }
+    });
+  }, observerOptions);
+  
+  cards.forEach(card => observer.observe(card));
+}
+
+// Enhance button interactions
+function initButtonInteractions() {
+  const buttons = document.querySelectorAll('button:not(.lang-btn):not(.nav-toggle):not(.sidebar-toggle), .btn');
+  
+  buttons.forEach(button => {
+    button.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-3px)';
+      this.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
+    });
     
-    return `<tr>
-      <td>${stock.name}</td>
-      <td><strong>${stock.symbol}</strong></td>
-      <td>$${price}</td>
-      <td class="${changeClass}">${changeSymbol}${change}</td>
-      <td class="${changeClass}">${changeSymbol}${changePercent}%</td>
-    </tr>`;
-  }).join('');
+    button.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+      this.style.boxShadow = 'none';
+    });
+    
+    button.addEventListener('click', function() {
+      this.style.animation = 'pulse 0.5s ease-out';
+      setTimeout(() => {
+        this.style.animation = '';
+      }, 500);
+    });
+  });
+}
+
+// Initialize form enhancements
+function initFormEnhancements() {
+  const inputs = document.querySelectorAll('input, textarea, select');
+  
+  inputs.forEach(input => {
+    input.addEventListener('focus', function() {
+      this.parentElement.style.transform = 'translateY(-2px)';
+    });
+    
+    input.addEventListener('blur', function() {
+      this.parentElement.style.transform = 'translateY(0)';
+    });
+  });
+}
+
+// Add smooth page transitions
+function initPageTransitions() {
+  const links = document.querySelectorAll('a[href*=".html"]');
+  
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Don't prevent default - just add animation
+      document.body.style.opacity = '0.95';
+    });
+  });
+  
+  // Fade in on page load
+  window.addEventListener('load', function() {
+    document.body.style.opacity = '1';
+  });
+}
+
+// Initialize tooltips
+function initTooltips() {
+  const tooltips = document.querySelectorAll('[data-tooltip]');
+  
+  tooltips.forEach(tooltip => {
+    tooltip.classList.add('tooltip');
+  });
+}
+
+// Initialize navigation drawer
+function initDrawerMenu() {
+  const drawerToggle = document.getElementById('drawer-toggle');
+  const drawerClose = document.getElementById('drawer-close');
+  const navDrawer = document.getElementById('nav-drawer');
+  const drawerOverlay = document.getElementById('drawer-overlay');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+  
+  if (!drawerToggle || !navDrawer) return;
+  
+  // Open drawer
+  drawerToggle.addEventListener('click', () => {
+    navDrawer.classList.add('open');
+    drawerOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  
+  // Close drawer
+  const closeDrawer = () => {
+    navDrawer.classList.remove('open');
+    drawerOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+  
+  if (drawerClose) {
+    drawerClose.addEventListener('click', closeDrawer);
+  }
+  
+  // Close on overlay click
+  drawerOverlay.addEventListener('click', closeDrawer);
+  
+  // Close on link click
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+  
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navDrawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
 }
