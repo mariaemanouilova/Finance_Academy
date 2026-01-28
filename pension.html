@@ -9,18 +9,17 @@
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
+        <div class="logo-brand">
+          <img src="logo.svg" alt="DFA Logo" class="logo">
+          <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
+        </div>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="site-nav" id="site-nav">
           <ul>
-            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
             <li><a href="banking.html" data-i18n="nav.banking">Banking</a></li>
             <li><a href="investment.html" data-i18n="nav.investment">Investment</a></li>
             <li><a href="insurance.html" data-i18n="nav.insurance">Insurance</a></li>
             <li><a href="pension.html" data-i18n="nav.pension">Pension</a></li>
-            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
-            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
           <div class="lang-switcher">
             <button class="lang-btn" data-lang="en" data-i18n="lang.en">English</button>
@@ -30,8 +29,20 @@
       </div>
     </header>
 
-    <main>
-      <section id="pension" class="section container">
+    <div class="layout">
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+      <section id="pension" class="section">
+        <article>
         <img src="img/pension.jpg" alt="Pension" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
         <h1 data-i18n="pension.title">Pension</h1>
         <p data-i18n="pension.intro">Plan for retirement: pension types, contribution strategies, and tax considerations.</p>
@@ -49,8 +60,10 @@
         <p data-i18n="pension.strategy.text">Maximize employer matching in 401(k) plans first. Then contribute to an IRA. Always take advantage of tax-deferred growth opportunities. Increase contributions annually as your income grows.</p>
         <h2 data-i18n="pension.tax">Tax Considerations</h2>
         <p data-i18n="pension.tax.text">Understand the tax implications of different accounts. Traditional plans offer immediate tax deductions, while Roth accounts provide tax-free withdrawals in retirement. Consider your current and expected retirement tax brackets.</p>
+        </article>
       </section>
-    </main>
+      </main>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-inner">

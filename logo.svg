@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background Circle -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2b6cb0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e4f7d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Circle Background -->
+  <circle cx="100" cy="100" r="95" fill="url(#logoGradient)" stroke="#fff" stroke-width="3"/>
+  
+  <!-- Book/Pages (left side) -->
+  <g transform="translate(60, 70)">
+    <!-- Book spine -->
+    <path d="M 5 0 L 5 40 Q 8 45 12 40 L 12 0 Z" fill="#ffffff" opacity="0.9"/>
+    <!-- Left page -->
+    <rect x="12" y="2" width="16" height="38" fill="#f0f6fb" stroke="#2b6cb0" stroke-width="1"/>
+    <!-- Right page -->
+    <rect x="28" y="2" width="16" height="38" fill="#ffffff" stroke="#2b6cb0" stroke-width="1"/>
+    <!-- Page lines -->
+    <line x1="15" y1="8" x2="25" y2="8" stroke="#cbd5e1" stroke-width="0.8"/>
+    <line x1="15" y1="12" x2="25" y2="12" stroke="#cbd5e1" stroke-width="0.8"/>
+    <line x1="15" y1="16" x2="25" y2="16" stroke="#cbd5e1" stroke-width="0.8"/>
+    <line x1="31" y1="8" x2="41" y2="8" stroke="#cbd5e1" stroke-width="0.8"/>
+    <line x1="31" y1="12" x2="41" y2="12" stroke="#cbd5e1" stroke-width="0.8"/>
+    <line x1="31" y1="16" x2="41" y2="16" stroke="#cbd5e1" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Coins/Money Stack (right side) -->
+  <g transform="translate(100, 75)">
+    <!-- Bottom coin -->
+    <ellipse cx="0" cy="15" rx="14" ry="6" fill="#ffd700" stroke="#ffaa00" stroke-width="1.5"/>
+    <ellipse cx="0" cy="14" rx="14" ry="6" fill="#ffe44d" stroke="none"/>
+    <!-- Dollar sign on bottom coin -->
+    <text x="0" y="17" text-anchor="middle" dominant-baseline="middle" font-size="8" font-weight="bold" fill="#b8860b">$</text>
+    
+    <!-- Middle coin -->
+    <ellipse cx="0" cy="5" rx="13" ry="5.5" fill="#e6b800" stroke="#ff9500" stroke-width="1.5"/>
+    <ellipse cx="0" cy="4" rx="13" ry="5.5" fill="#ffd700" stroke="none"/>
+    <!-- Dollar sign on middle coin -->
+    <text x="0" y="6" text-anchor="middle" dominant-baseline="middle" font-size="7" font-weight="bold" fill="#996600">$</text>
+    
+    <!-- Top coin -->
+    <ellipse cx="0" cy="-5" rx="12" ry="5" fill="#c9a227" stroke="#ff8c00" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-6" rx="12" ry="5" fill="#ffd700" stroke="none"/>
+    <!-- Dollar sign on top coin -->
+    <text x="0" y="-4" text-anchor="middle" dominant-baseline="middle" font-size="6" font-weight="bold" fill="#8b6914">$</text>
+  </g>
+  
+  <!-- Upward Arrow (growth indicator) -->
+  <g transform="translate(75, 115)">
+    <!-- Arrow shaft -->
+    <rect x="-2" y="5" width="4" height="20" fill="#10b981" rx="2"/>
+    <!-- Arrow head -->
+    <polygon points="0,-2 -8,8 8,8" fill="#10b981"/>
+  </g>
+  
+  <!-- Decorative circles around logo -->
+  <circle cx="100" cy="100" r="100" fill="none" stroke="#2b6cb0" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Top accent line -->
+  <line x1="50" y1="30" x2="150" y2="30" stroke="#10b981" stroke-width="2" opacity="0.6"/>
+</svg>

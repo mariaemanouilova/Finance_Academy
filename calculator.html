@@ -9,18 +9,17 @@
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
+        <div class="logo-brand">
+          <img src="logo.svg" alt="DFA Logo" class="logo">
+          <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
+        </div>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="site-nav" id="site-nav">
           <ul>
-            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
             <li><a href="banking.html" data-i18n="nav.banking">Banking</a></li>
             <li><a href="investment.html" data-i18n="nav.investment">Investment</a></li>
             <li><a href="insurance.html" data-i18n="nav.insurance">Insurance</a></li>
             <li><a href="pension.html" data-i18n="nav.pension">Pension</a></li>
-            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
-            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
           <div class="lang-switcher">
             <button class="lang-btn" data-lang="en" data-i18n="lang.en">English</button>
@@ -30,10 +29,22 @@
       </div>
     </header>
 
-    <main>
-      <section id="calculator" class="section container">
-        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop" alt="Calculator" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
-        <h1 data-i18n="calculator.title">Financial Calculator</h1>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <section id="calculator" class="section">
+          <article>
+            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop" alt="Calculator" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
+            <h1 data-i18n="calculator.title">Financial Calculator</h1>
         <p data-i18n="calculator.intro">Use the following simple compound interest calculator to estimate future value of your investments with regular monthly contributions.</p>
         
         <h2 data-i18n="calculator.compound">Compound Interest Calculator</h2>
@@ -57,9 +68,11 @@
         <h2 data-i18n="calculator.how">How the Calculator Works</h2>
         <p data-i18n="calculator.how.text">Enter your initial amount, monthly contribution, annual interest rate (as a percentage), and time period. The calculator uses the compound interest formula with monthly compounding to estimate how much your investment will grow.</p>
         <p><strong data-i18n="calculator.formula">Formula:</strong> <span data-i18n="calculator.formula.text">FV = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) - 1) / (r/n)]</span></p>
-        <p data-i18n="calculator.where">Where P = Principal, r = Annual rate, n = Compounding periods per year, t = Time in years, PMT = Monthly payment</p>
-      </section>
-    </main>
+            <p data-i18n="calculator.where">Where P = Principal, r = Annual rate, n = Compounding periods per year, t = Time in years, PMT = Monthly payment</p>
+          </article>
+        </section>
+      </main>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-inner">

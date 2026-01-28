@@ -9,18 +9,17 @@
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
+        <div class="logo-brand">
+          <img src="logo.svg" alt="DFA Logo" class="logo">
+          <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
+        </div>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="site-nav" id="site-nav">
           <ul>
-            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
             <li><a href="banking.html" data-i18n="nav.banking">Banking</a></li>
             <li><a href="investment.html" data-i18n="nav.investment">Investment</a></li>
             <li><a href="insurance.html" data-i18n="nav.insurance">Insurance</a></li>
             <li><a href="pension.html" data-i18n="nav.pension">Pension</a></li>
-            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
-            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
           <div class="lang-switcher">
             <button class="lang-btn" data-lang="en" data-i18n="lang.en">English</button>
@@ -30,10 +29,22 @@
       </div>
     </header>
 
-    <main>
-      <section id="about" class="section container">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="About Us" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
-        <h1 data-i18n="about.title">About Us</h1>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <section id="about" class="section">
+          <article>
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="About Us" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
+            <h1 data-i18n="about.title">About Us</h1>
         <p data-i18n="about.intro">Digital Financial Academy provides clear, practical financial education for individuals and small businesses. Our mission is to empower people to make better financial decisions.</p>
         <h2 data-i18n="about.vision">Our Vision</h2>
         <p data-i18n="about.vision.text">We believe everyone deserves access to quality financial education, regardless of their background or experience level. By breaking down complex financial concepts into understandable lessons, we help people take control of their financial future.</p>
@@ -45,9 +56,11 @@
           <li data-i18n="about.offer.4">Pension planning resources</li>
           <li data-i18n="about.offer.5">Financial calculators for planning</li>
           <li data-i18n="about.offer.6">Expert support and consultation</li>
-        </ul>
-      </section>
-    </main>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-inner">
