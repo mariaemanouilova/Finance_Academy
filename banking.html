@@ -3,25 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Banking - Digital Financial Academy</title>
+    <title data-i18n="banking.title">Banking - Digital Financial Academy</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html">Digital Financial Academy</a>
+        <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="site-nav" id="site-nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="banking.html">Banking</a></li>
-            <li><a href="investment.html">Investment</a></li>
-            <li><a href="insurance.html">Insurance</a></li>
-            <li><a href="pension.html">Pension</a></li>
-            <li><a href="calculator.html">Calculator</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="banking.html" data-i18n="nav.banking">Banking</a></li>
+            <li><a href="investment.html" data-i18n="nav.investment">Investment</a></li>
+            <li><a href="insurance.html" data-i18n="nav.insurance">Insurance</a></li>
+            <li><a href="pension.html" data-i18n="nav.pension">Pension</a></li>
+            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="en" data-i18n="lang.en">English</button>
+            <button class="lang-btn" data-lang="bg" data-i18n="lang.bg">Български</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -29,38 +33,39 @@
     <main>
       <section id="banking" class="section container">
         <img src="img/banking.jpg" alt="Banking" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
-        <h1>Banking</h1>
-        <p>Explore types of bank accounts, how to choose the right provider, interest basics, and digital banking tools.</p>
-        <h2>Types of Bank Accounts</h2>
+        <h1 data-i18n="banking.title">Banking</h1>
+        <p data-i18n="banking.intro">Explore types of bank accounts, how to choose the right provider, interest basics, and digital banking tools.</p>
+        <h2 data-i18n="banking.types">Types of Bank Accounts</h2>
         <ul>
-          <li><strong>Checking Accounts:</strong> Best for daily transactions and bill payments with debit card access</li>
-          <li><strong>Savings Accounts:</strong> Earn interest on your deposits while maintaining easy access</li>
-          <li><strong>Money Market Accounts:</strong> Higher interest rates for larger balances with check-writing privileges</li>
-          <li><strong>Certificates of Deposit (CDs):</strong> Fixed-term savings with guaranteed interest rates</li>
+          <li><strong data-i18n="banking.checking">Checking Accounts:</strong> <span data-i18n="banking.checking.desc">Best for daily transactions and bill payments with debit card access</span></li>
+          <li><strong data-i18n="banking.savings">Savings Accounts:</strong> <span data-i18n="banking.savings.desc">Earn interest on your deposits while maintaining easy access</span></li>
+          <li><strong data-i18n="banking.market">Money Market Accounts:</strong> <span data-i18n="banking.market.desc">Higher interest rates for larger balances with check-writing privileges</span></li>
+          <li><strong data-i18n="banking.cd">Certificates of Deposit (CDs):</strong> <span data-i18n="banking.cd.desc">Fixed-term savings with guaranteed interest rates</span></li>
         </ul>
-        <h2>Choosing the Right Bank</h2>
-        <p>When selecting a bank, consider:</p>
+        <h2 data-i18n="banking.choose">Choosing the Right Bank</h2>
+        <p data-i18n="banking.choose.text">When selecting a bank, consider:</p>
         <ul>
-          <li>Interest rates offered</li>
-          <li>Fees and charges</li>
-          <li>Digital banking features</li>
-          <li>Customer support availability</li>
-          <li>FDIC insurance protection</li>
+          <li data-i18n="banking.choose.1">Interest rates offered</li>
+          <li data-i18n="banking.choose.2">Fees and charges</li>
+          <li data-i18n="banking.choose.3">Digital banking features</li>
+          <li data-i18n="banking.choose.4">Customer support availability</li>
+          <li data-i18n="banking.choose.5">FDIC insurance protection</li>
         </ul>
-        <h2>Digital Banking Tips</h2>
-        <p>Modern banking has evolved to offer convenient digital solutions. Take advantage of mobile apps, online transfers, and automated bill payments to manage your finances efficiently and securely.</p>
+        <h2 data-i18n="banking.digital">Digital Banking Tips</h2>
+        <p data-i18n="banking.digital.text">Modern banking has evolved to offer convenient digital solutions. Take advantage of mobile apps, online transfers, and automated bill payments to manage your finances efficiently and securely.</p>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
+        <p data-i18n="footer.copyright" data-copyright-year>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
         <p class="footer-links">
-          <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="#">Privacy</a>
+          <a href="about.html" data-i18n="footer.about">About</a> · <a href="contact.html" data-i18n="footer.contact">Contact</a> · <a href="#" data-i18n="footer.privacy">Privacy</a>
         </p>
       </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

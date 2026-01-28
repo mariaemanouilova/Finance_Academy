@@ -3,25 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact - Digital Financial Academy</title>
+    <title data-i18n="contact.title">Contact - Digital Financial Academy</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html">Digital Financial Academy</a>
+        <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="site-nav" id="site-nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="banking.html">Banking</a></li>
-            <li><a href="investment.html">Investment</a></li>
-            <li><a href="insurance.html">Insurance</a></li>
-            <li><a href="pension.html">Pension</a></li>
-            <li><a href="calculator.html">Calculator</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="banking.html" data-i18n="nav.banking">Banking</a></li>
+            <li><a href="investment.html" data-i18n="nav.investment">Investment</a></li>
+            <li><a href="insurance.html" data-i18n="nav.insurance">Insurance</a></li>
+            <li><a href="pension.html" data-i18n="nav.pension">Pension</a></li>
+            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="en" data-i18n="lang.en">English</button>
+            <button class="lang-btn" data-lang="bg" data-i18n="lang.bg">Български</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -29,55 +33,56 @@
     <main>
       <section id="contact" class="section container">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="Contact" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
-        <h1>Contact Us</h1>
-        <p>Have questions? We'd love to hear from you! Get in touch with the Digital Financial Academy team.</p>
+        <h1 data-i18n="contact.title">Contact Us</h1>
+        <p data-i18n="contact.intro">Have questions? We'd love to hear from you! Get in touch with the Digital Financial Academy team.</p>
         
-        <h2>Get in Touch</h2>
-        <p><strong>Email:</strong> <a href="mailto:info@digitalfinancial.academy">info@digitalfinancial.academy</a></p>
-        <p><strong>Support:</strong> <a href="mailto:support@digitalfinancial.academy">support@digitalfinancial.academy</a></p>
+        <h2 data-i18n="contact.touch">Get in Touch</h2>
+        <p><strong data-i18n="contact.email">Email:</strong> <a href="mailto:info@digitalfinancial.academy">info@digitalfinancial.academy</a></p>
+        <p><strong data-i18n="contact.support">Support:</strong> <a href="mailto:support@digitalfinancial.academy">support@digitalfinancial.academy</a></p>
         
-        <h2>Follow Us</h2>
-        <p>Stay updated with our latest content and financial tips:</p>
+        <h2 data-i18n="contact.follow">Follow Us</h2>
+        <p data-i18n="contact.follow.text">Stay updated with our latest content and financial tips:</p>
         <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">YouTube</a></li>
+          <li><a href="#" data-i18n="contact.facebook">Facebook</a></li>
+          <li><a href="#" data-i18n="contact.twitter">Twitter</a></li>
+          <li><a href="#" data-i18n="contact.linkedin">LinkedIn</a></li>
+          <li><a href="#" data-i18n="contact.youtube">YouTube</a></li>
         </ul>
 
-        <h2>Contact Form</h2>
+        <h2 data-i18n="contact.form">Contact Form</h2>
         <form class="contact-form" onsubmit="return handleContactForm(event);">
-          <label>Name
+          <label data-i18n="contact.name">Name
             <input type="text" name="name" required>
           </label>
-          <label>Email
+          <label data-i18n="contact.form.email">Email
             <input type="email" name="email" required>
           </label>
-          <label>Subject
+          <label data-i18n="contact.subject">Subject
             <input type="text" name="subject" required>
           </label>
-          <label>Message
+          <label data-i18n="contact.message">Message
             <textarea name="message" rows="6" required></textarea>
           </label>
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="btn" data-i18n="contact.send">Send Message</button>
         </form>
         <div id="form-result" aria-live="polite"></div>
 
-        <h2>Office Hours</h2>
-        <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-        <p>Saturday - Sunday: Closed</p>
+        <h2 data-i18n="contact.office">Office Hours</h2>
+        <p data-i18n="contact.hours">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+        <p data-i18n="contact.closed">Saturday - Sunday: Closed</p>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
+        <p data-i18n="footer.copyright" data-copyright-year>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
         <p class="footer-links">
-          <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="#">Privacy</a>
+          <a href="about.html" data-i18n="footer.about">About</a> · <a href="contact.html" data-i18n="footer.contact">Contact</a> · <a href="#" data-i18n="footer.privacy">Privacy</a>
         </p>
       </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,3 +1,61 @@
+/* Layout with sidebar */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+.sidebar {
+  min-width: 200px;
+  max-width: 250px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.06);
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 90px;
+  height: fit-content;
+}
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.sidebar-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.2rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.sidebar-nav a:hover, .sidebar-nav a.active {
+  background: #e0e7ef;
+}
+.main-content {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+@media (max-width: 1000px) {
+  .layout {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    position: static;
+    top: unset;
+    margin-bottom: 1rem;
+  }
+}
 /* Basic styles for Digital Financial Academy */
 :root{
   --accent:#2b6cb0;
@@ -11,6 +69,7 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .header-inner{display:flex; align-items:center; justify-content:space-between}
 .brand{font-weight:700; text-decoration:none; color:var(--accent); font-size:1.125rem}
 .site-header{background:#fff; box-shadow:0 1px 3px rgba(15,23,42,0.06); position:sticky; top:0; z-index:50}
+.site-nav{display:flex; align-items:center; justify-content:space-between; gap:1rem}
 .site-nav ul{list-style:none; margin:0; padding:0; display:flex; gap:0.75rem}
 .site-nav a{display:inline-block; padding:0.6rem 0.4rem; color:inherit; text-decoration:none}
 .nav-toggle{display:none; background:transparent; border:0; font-size:1.2rem}
@@ -40,7 +99,23 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .site-footer{background:linear-gradient(135deg, #0b1220 0%, #1a2847 100%); color:#cbd5e1; padding:2rem 0; position:relative; overflow:hidden}
 .site-footer::before{content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23ffffff" opacity="0.1"/><circle cx="80" cy="80" r="2" fill="%23ffffff" opacity="0.1"/></svg>'); background-size:50px 50px}
 .footer-inner{display:flex; gap:1rem; align-items:center; justify-content:space-between; position:relative; z-index:1}
-.footer-links a{color:#94a3b8; text-decoration:none}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  margin: 0 0.2rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 
 /* Stock table */
 .stocks-table{margin:1.5rem 0; overflow-x:auto}
@@ -64,9 +139,14 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .site-nav.open ul{flex-direction:column; padding:1rem}
 .site-nav.open a{padding:0.6rem 0}
 
-/* Contact form */
-.contact-form{display:flex; flex-direction:column; gap:1rem; margin:1.5rem 0; background:#f8fafc; padding:1.5rem; border-radius:8px}
-.contact-form label{display:flex; flex-direction:column; font-weight:500}
-.contact-form input, .contact-form textarea{padding:0.6rem; border:1px solid #cbd5e1; border-radius:6px; font-family:inherit; font-size:inherit}
-.contact-form textarea{resize:vertical}
-#form-result{margin-top:0.75rem; padding:0.75rem; border-radius:6px}
+/* Language Switcher */
+.lang-switcher{display:flex; gap:0.5rem; align-items:center; flex-shrink:0}
+.lang-btn{background:#f0f6fb; color:var(--accent); padding:0.3rem 0.6rem; border:1px solid #cbd5e1; border-radius:4px; cursor:pointer; font-size:0.75rem; font-weight:600; transition:all 0.3s ease; white-space:nowrap}
+.lang-btn:hover{background:#e2ecf7; border-color:var(--accent)}
+.lang-btn.active{background:var(--accent); color:#fff; border-color:var(--accent)}
+@media (max-width:768px){
+  .site-nav{flex-direction:column; align-items:flex-start}
+  .lang-switcher{margin-top:0.5rem}
+}
+
+

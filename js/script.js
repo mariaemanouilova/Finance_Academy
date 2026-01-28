@@ -1,8 +1,70 @@
+// Initialize language
+function initLanguage() {
+  const savedLang = localStorage.getItem('language') || 'en';
+  document.documentElement.lang = savedLang;
+  translatePage(savedLang);
+  updateLanguageSwitcher(savedLang);
+}
+
+// Translate all elements with data-i18n attribute
+function translatePage(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const text = t(key, lang);
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'BUTTON') {
+      if (el.type === 'submit' || el.classList.contains('btn')) {
+        el.textContent = text;
+      } else {
+        el.placeholder = text;
+      }
+    } else {
+      el.textContent = text;
+    }
+  });
+  
+  // Update year in footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+  
+  // Re-render data-dependent content
+  renderStockTables(lang);
+}
+
+// Update language switcher button states
+function updateLanguageSwitcher(lang) {
+  document.querySelectorAll('[data-lang]').forEach(btn => {
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+// Switch language
+function switchLanguage(lang) {
+  localStorage.setItem('language', lang);
+  document.documentElement.lang = lang;
+  translatePage(lang);
+  updateLanguageSwitcher(lang);
+}
+
+// Render stock tables with localized headers
+function renderStockTables(lang) {
+  loadSOFIXData();
+  loadSP500Data();
+}
+
 // Set current year in footer
 document.addEventListener('DOMContentLoaded', function(){
   const y = new Date().getFullYear();
   const yearEl = document.getElementById('year');
   if(yearEl) yearEl.textContent = y;
+
+  // Initialize language system
+  initLanguage();
 
   // Nav toggle for small screens
   const navToggle = document.getElementById('nav-toggle');
@@ -14,6 +76,14 @@ document.addEventListener('DOMContentLoaded', function(){
     // close nav when a link is clicked
     siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> siteNav.classList.remove('open')));
   }
+
+  // Language switcher
+  document.querySelectorAll('[data-lang]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const lang = this.getAttribute('data-lang');
+      switchLanguage(lang);
+    });
+  });
 
   // Calculator
   const btn = document.getElementById('calc-btn');
@@ -39,7 +109,9 @@ document.addEventListener('DOMContentLoaded', function(){
       }
       const fv = fvP + fvC;
 
-      resultEl.innerHTML = `<strong>Estimated future value:</strong> ${fv.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:2})}`;
+      const lang = localStorage.getItem('language') || 'en';
+      const resultText = t('calculator.result', lang);
+      resultEl.innerHTML = `<strong>${resultText}</strong> ${fv.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:2})}`;
     });
   }
 
@@ -47,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function(){
   loadSOFIXData();
   loadSP500Data();
 });
+
 
 // Handle contact form submission
 function handleContactForm(event){
@@ -57,12 +130,15 @@ function handleContactForm(event){
   
   // Simple client-side validation and feedback
   if(name.trim()){
-    resultEl.innerHTML = `<strong style="color:green;">✓ Thank you, ${name}! Your message has been received. We'll get back to you soon.</strong>`;
+    const lang = localStorage.getItem('language') || 'en';
+    const message = translateWithVars(t('contact.success', lang), {name: name});
+    resultEl.innerHTML = `<strong style="color:green;">✓ ${message}</strong>`;
     event.target.reset();
     setTimeout(() => resultEl.innerHTML = '', 5000);
   }
   return false;
 }
+
 
 // Load SOFIX data from Bulgarian Stock Exchange (BSE Sofia)
 function loadSOFIXData(){

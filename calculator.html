@@ -3,25 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calculator - Digital Financial Academy</title>
+    <title data-i18n="calculator.title">Calculator - Digital Financial Academy</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html">Digital Financial Academy</a>
+        <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="site-nav" id="site-nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="banking.html">Banking</a></li>
-            <li><a href="investment.html">Investment</a></li>
-            <li><a href="insurance.html">Insurance</a></li>
-            <li><a href="pension.html">Pension</a></li>
-            <li><a href="calculator.html">Calculator</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="banking.html" data-i18n="nav.banking">Banking</a></li>
+            <li><a href="investment.html" data-i18n="nav.investment">Investment</a></li>
+            <li><a href="insurance.html" data-i18n="nav.insurance">Insurance</a></li>
+            <li><a href="pension.html" data-i18n="nav.pension">Pension</a></li>
+            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="en" data-i18n="lang.en">English</button>
+            <button class="lang-btn" data-lang="bg" data-i18n="lang.bg">Български</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -29,43 +33,44 @@
     <main>
       <section id="calculator" class="section container">
         <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop" alt="Calculator" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
-        <h1>Financial Calculator</h1>
-        <p>Use the following simple compound interest calculator to estimate future value of your investments with regular monthly contributions.</p>
+        <h1 data-i18n="calculator.title">Financial Calculator</h1>
+        <p data-i18n="calculator.intro">Use the following simple compound interest calculator to estimate future value of your investments with regular monthly contributions.</p>
         
-        <h2>Compound Interest Calculator</h2>
+        <h2 data-i18n="calculator.compound">Compound Interest Calculator</h2>
         <form id="calc-form" class="calc-form" onsubmit="return false;">
-          <label>Principal (initial) amount ($)
+          <label data-i18n="calculator.principal">Principal (initial) amount ($)
             <input type="number" id="principal" value="1000" min="0" step="any">
           </label>
-          <label>Monthly contribution ($)
+          <label data-i18n="calculator.contribution">Monthly contribution ($)
             <input type="number" id="contribution" value="100" min="0" step="any">
           </label>
-          <label>Annual interest rate (%)
+          <label data-i18n="calculator.rate">Annual interest rate (%)
             <input type="number" id="rate" value="5" min="0" step="any">
           </label>
-          <label>Years
+          <label data-i18n="calculator.years">Years
             <input type="number" id="years" value="10" min="0" step="1">
           </label>
-          <button id="calc-btn" class="btn">Calculate</button>
+          <button id="calc-btn" class="btn" data-i18n="calculator.btn">Calculate</button>
         </form>
         <div id="calc-result" class="calc-result" aria-live="polite"></div>
 
-        <h2>How the Calculator Works</h2>
-        <p>Enter your initial amount, monthly contribution, annual interest rate (as a percentage), and time period. The calculator uses the compound interest formula with monthly compounding to estimate how much your investment will grow.</p>
-        <p><strong>Formula:</strong> FV = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) - 1) / (r/n)]</p>
-        <p>Where P = Principal, r = Annual rate, n = Compounding periods per year, t = Time in years, PMT = Monthly payment</p>
+        <h2 data-i18n="calculator.how">How the Calculator Works</h2>
+        <p data-i18n="calculator.how.text">Enter your initial amount, monthly contribution, annual interest rate (as a percentage), and time period. The calculator uses the compound interest formula with monthly compounding to estimate how much your investment will grow.</p>
+        <p><strong data-i18n="calculator.formula">Formula:</strong> <span data-i18n="calculator.formula.text">FV = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) - 1) / (r/n)]</span></p>
+        <p data-i18n="calculator.where">Where P = Principal, r = Annual rate, n = Compounding periods per year, t = Time in years, PMT = Monthly payment</p>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
+        <p data-i18n="footer.copyright" data-copyright-year>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
         <p class="footer-links">
-          <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="#">Privacy</a>
+          <a href="about.html" data-i18n="footer.about">About</a> · <a href="contact.html" data-i18n="footer.contact">Contact</a> · <a href="#" data-i18n="footer.privacy">Privacy</a>
         </p>
       </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

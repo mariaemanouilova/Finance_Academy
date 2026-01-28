@@ -3,25 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Investment - Digital Financial Academy</title>
+    <title data-i18n="investment.title">Investment - Digital Financial Academy</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html">Digital Financial Academy</a>
+        <a class="brand" href="index.html" data-i18n="brand">Digital Financial Academy</a>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="site-nav" id="site-nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="banking.html">Banking</a></li>
-            <li><a href="investment.html">Investment</a></li>
-            <li><a href="insurance.html">Insurance</a></li>
-            <li><a href="pension.html">Pension</a></li>
-            <li><a href="calculator.html">Calculator</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="banking.html" data-i18n="nav.banking">Banking</a></li>
+            <li><a href="investment.html" data-i18n="nav.investment">Investment</a></li>
+            <li><a href="insurance.html" data-i18n="nav.insurance">Insurance</a></li>
+            <li><a href="pension.html" data-i18n="nav.pension">Pension</a></li>
+            <li><a href="calculator.html" data-i18n="nav.calculator">Calculator</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="en" data-i18n="lang.en">English</button>
+            <button class="lang-btn" data-lang="bg" data-i18n="lang.bg">Български</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -29,73 +33,74 @@
     <main>
       <section id="investment" class="section container">
         <img src="img/investment.webp" alt="Investment" style="width:100%; max-width:500px; height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
-        <h1>Investment</h1>
-        <p>Learn about stocks, bonds, ETFs, diversification, risk management and long-term strategies.</p>
+        <h1 data-i18n="investment.title">Investment</h1>
+        <p data-i18n="investment.intro">Learn about stocks, bonds, ETFs, diversification, risk management and long-term strategies.</p>
         
-        <h2>Top 5 SOFIX Companies - Bulgarian Stock Exchange</h2>
-        <p>Real-time stock data from www.bse-sofia.bg:</p>
+        <h2 data-i18n="investment.sofix">Top 5 SOFIX Companies - Bulgarian Stock Exchange</h2>
+        <p data-i18n="investment.sofix.source">Real-time stock data from www.bse-sofia.bg:</p>
         <div id="sofix-container" class="stocks-table">
           <table>
             <thead>
               <tr>
-                <th>Company</th>
-                <th>Symbol</th>
-                <th>Price (BGN)</th>
-                <th>Change</th>
-                <th>Change %</th>
+                <th data-i18n="investment.stocks.company">Company</th>
+                <th data-i18n="investment.stocks.symbol">Symbol</th>
+                <th data-i18n="investment.stocks.price">Price (BGN)</th>
+                <th data-i18n="investment.stocks.change">Change</th>
+                <th data-i18n="investment.stocks.changePercent">Change %</th>
               </tr>
             </thead>
             <tbody id="sofix-body">
-              <tr><td colspan="5" style="text-align:center; padding:1rem;">Loading SOFIX data...</td></tr>
+              <tr><td colspan="5" style="text-align:center; padding:1rem;" data-i18n="investment.stocks.loading">Loading SOFIX data...</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h2>Top 5 S&P 500 Companies - Yahoo Finance</h2>
-        <p>Real-time stock data from Yahoo Finance:</p>
+        <h2 data-i18n="investment.sp500">Top 5 S&P 500 Companies - Yahoo Finance</h2>
+        <p data-i18n="investment.sp500.source">Real-time stock data from Yahoo Finance:</p>
         <div id="sp500-container" class="stocks-table">
           <table>
             <thead>
               <tr>
-                <th>Company</th>
-                <th>Symbol</th>
-                <th>Price (USD)</th>
-                <th>Change</th>
-                <th>Change %</th>
+                <th data-i18n="investment.stocks.company">Company</th>
+                <th data-i18n="investment.stocks.symbol">Symbol</th>
+                <th data-i18n="investment.stocks.price">Price (USD)</th>
+                <th data-i18n="investment.stocks.change">Change</th>
+                <th data-i18n="investment.stocks.changePercent">Change %</th>
               </tr>
             </thead>
             <tbody id="sp500-body">
-              <tr><td colspan="5" style="text-align:center; padding:1rem;">Loading S&P 500 data...</td></tr>
+              <tr><td colspan="5" style="text-align:center; padding:1rem;" data-i18n="investment.stocks.loading">Loading S&P 500 data...</td></tr>
             </tbody>
           </table>
         </div>
         
-        <h2>Investment Basics</h2>
-        <p>Investing is putting your money into financial assets with the goal of growing your wealth over time. The key is understanding different investment vehicles and how to match them with your goals.</p>
-        <h2>Types of Investments</h2>
+        <h2 data-i18n="investment.basics">Investment Basics</h2>
+        <p data-i18n="investment.basics.text">Investing is putting your money into financial assets with the goal of growing your wealth over time. The key is understanding different investment vehicles and how to match them with your goals.</p>
+        <h2 data-i18n="investment.types">Types of Investments</h2>
         <ul>
-          <li><strong>Stocks:</strong> Ownership shares in companies with growth potential</li>
-          <li><strong>Bonds:</strong> Loans to companies or governments that pay fixed interest</li>
-          <li><strong>Exchange-Traded Funds (ETFs):</strong> Diversified portfolios that trade like stocks</li>
-          <li><strong>Mutual Funds:</strong> Professionally managed portfolios of securities</li>
-          <li><strong>Real Estate:</strong> Property investment with rental income potential</li>
+          <li><strong data-i18n="investment.stocks">Stocks:</strong> <span data-i18n="investment.stocks.desc">Ownership shares in companies with growth potential</span></li>
+          <li><strong data-i18n="investment.bonds">Bonds:</strong> <span data-i18n="investment.bonds.desc">Loans to companies or governments that pay fixed interest</span></li>
+          <li><strong data-i18n="investment.etf">Exchange-Traded Funds (ETFs):</strong> <span data-i18n="investment.etf.desc">Diversified portfolios that trade like stocks</span></li>
+          <li><strong data-i18n="investment.mutual">Mutual Funds:</strong> <span data-i18n="investment.mutual.desc">Professionally managed portfolios of securities</span></li>
+          <li><strong data-i18n="investment.realestate">Real Estate:</strong> <span data-i18n="investment.realestate.desc">Property investment with rental income potential</span></li>
         </ul>
-        <h2>Diversification & Risk Management</h2>
-        <p>Don't put all your eggs in one basket. Diversify across asset classes, sectors, and geographies to reduce risk. Consider your risk tolerance and time horizon when building your investment portfolio.</p>
-        <h2>Long-Term Strategy</h2>
-        <p>The power of compound growth means starting early and staying invested matters. Develop a strategy aligned with your goals and review it regularly, but avoid emotional decisions based on short-term market fluctuations.</p>
+        <h2 data-i18n="investment.diversification">Diversification & Risk Management</h2>
+        <p data-i18n="investment.diversification.text">Don't put all your eggs in one basket. Diversify across asset classes, sectors, and geographies to reduce risk. Consider your risk tolerance and time horizon when building your investment portfolio.</p>
+        <h2 data-i18n="investment.strategy">Long-Term Strategy</h2>
+        <p data-i18n="investment.strategy.text">The power of compound growth means starting early and staying invested matters. Develop a strategy aligned with your goals and review it regularly, but avoid emotional decisions based on short-term market fluctuations.</p>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
+        <p data-i18n="footer.copyright" data-copyright-year>© <span id="year"></span> Digital Financial Academy. All rights reserved.</p>
         <p class="footer-links">
-          <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="#">Privacy</a>
+          <a href="about.html" data-i18n="footer.about">About</a> · <a href="contact.html" data-i18n="footer.contact">Contact</a> · <a href="#" data-i18n="footer.privacy">Privacy</a>
         </p>
       </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
