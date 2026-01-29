@@ -1,6 +1,6 @@
 // Initialize language
 function initLanguage() {
-  const savedLang = localStorage.getItem('language') || 'en';
+  const savedLang = localStorage.getItem('language') || 'bg';
   document.documentElement.lang = savedLang;
   translatePage(savedLang);
   updateLanguageSwitcher(savedLang);
@@ -206,6 +206,36 @@ function loadSP500Data(){
   // Top 5 S&P 500 companies by market cap - Real market data
   const sp500Data = [
     {symbol: 'MSFT', name: 'Microsoft Corporation', price: 429.54, change: 2.45, changePercent: 0.58},
+    {symbol: 'AAPL', name: 'Apple Inc.', price: 191.29, change: -1.06, changePercent: -0.55},
+    {symbol: 'NVDA', name: 'NVIDIA Corporation', price: 926.69, change: 15.40, changePercent: 1.69},
+    {symbol: 'GOOGL', name: 'Alphabet Inc.', price: 173.69, change: 1.15, changePercent: 0.67},
+    {symbol: 'AMZN', name: 'Amazon.com Inc.', price: 180.38, change: 0.85, changePercent: 0.47}
+  ];
+  
+  renderSP500Stocks(sp500Data);
+}
+
+function renderSP500Stocks(stocks){
+  const sp500Body = document.getElementById('sp500-body');
+  if(!sp500Body) return;
+  
+  sp500Body.innerHTML = stocks.slice(0, 5).map(stock => {
+    const changeClass = stock.change >= 0 ? 'positive' : 'negative';
+    const changeSymbol = stock.change >= 0 ? '+' : '';
+    const price = parseFloat(stock.price).toFixed(2);
+    const change = parseFloat(stock.change).toFixed(2);
+    const changePercent = parseFloat(stock.changePercent).toFixed(2);
+    
+    return `<tr>
+      <td>${stock.name}</td>
+      <td><strong>${stock.symbol}</strong></td>
+      <td>$${price}</td>
+      <td class="${changeClass}">${changeSymbol}${change}</td>
+      <td class="${changeClass}">${changeSymbol}${changePercent}%</td>
+    </tr>`;
+  }).join('');
+}
+
 // Initialize Lottie animations
 function initLottieAnimations() {
   // Banking hero animation (using a simple spinning animation)

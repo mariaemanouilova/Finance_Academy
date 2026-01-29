@@ -382,7 +382,7 @@ const translations = {
 // Helper function to get translation
 function t(key, lang = null) {
   if (!lang) {
-    lang = localStorage.getItem('language') || 'en';
+    lang = localStorage.getItem('language') || 'bg';
   }
   return translations[lang] && translations[lang][key] ? translations[lang][key] : key;
 }

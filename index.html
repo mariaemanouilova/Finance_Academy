@@ -24,8 +24,8 @@
             <li><a href="pension.html" data-i18n="nav.pension">Pension</a></li>
           </ul>
           <div class="lang-switcher">
-            <button class="lang-btn" data-lang="en" data-i18n="lang.en">English</button>
-            <button class="lang-btn" data-lang="bg" data-i18n="lang.bg">Български</button>
+            <button type="button" class="lang-btn" data-lang="en" data-i18n="lang.en" onclick="switchLanguage('en')">English</button>
+            <button type="button" class="lang-btn" data-lang="bg" data-i18n="lang.bg" onclick="switchLanguage('bg')">Български</button>
           </div>
         </nav>
       </div>
@@ -45,6 +45,10 @@
           <li><a href="calculator.html" class="drawer-link">🧮 <span data-i18n="nav.calculator">Calculator</span></a></li>
           <li><a href="contact.html" class="drawer-link">📧 <span data-i18n="nav.contact">Contact</span></a></li>
         </ul>
+        <div class="lang-switcher" style="padding: 0 1.5rem; margin: 1rem 0; border: none; display: flex; justify-content: flex-start;">
+            <button type="button" class="lang-btn" data-lang="en" data-i18n="lang.en" onclick="switchLanguage('en')">English</button>
+            <button type="button" class="lang-btn" data-lang="bg" data-i18n="lang.bg" onclick="switchLanguage('bg')">Български</button>
+        </div>
       </nav>
       <div class="drawer-footer" style="border-top: 1px solid #e2e8f0; padding-top: 1rem; margin-top: 1.5rem;">
         <p style="margin: 0 0 0.5rem 0; font-size: 0.85rem; color: #64748b;">Useful Links</p>
@@ -64,7 +68,6 @@
 					<p data-i18n="index.hero.subtitle" style="font-size: 1.2rem; opacity: 0.95; margin-bottom: 2rem; animation: fadeInUp 0.8s ease 0.2s backwards;">Learn banking, investing, insurance, pensions and use practical calculators to plan your financial future.</p>
 					<a class="btn" href="about.html" data-i18n="index.hero.cta" style="display: inline-block; background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%); color: #2b6cb0; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; animation: scaleIn 0.6s ease 0.3s backwards;">Get Started →</a>
 				</div>
-				<div style="position: absolute; bottom: 0; right: 0; width: 400px; height: 400px; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"%23ffffff\" opacity=\"0.05\"/><path d=\"M 20 50 Q 35 30 50 50 T 80 50\" stroke=\"%23ffffff\" stroke-width=\"1\" fill=\"none\" opacity=\"0.1\"/><path d=\"M 20 60 Q 35 40 50 60 T 80 60\" stroke=\"%23ffffff\" stroke-width=\"1\" fill=\"none\" opacity=\"0.08\"/></svg>'); background-size: cover; opacity: 0.3; animation: float 6s ease-in-out infinite;"></div>
 			</section>
 
 			<section class="section container">
